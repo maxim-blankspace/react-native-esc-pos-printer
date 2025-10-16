@@ -129,6 +129,10 @@ public abstract class NativeEscPosPrinterSpec extends ReactContextBaseJavaModule
           "ERR_TIMEOUT",
           "ERR_TYPE_INVALID",
           "ERR_UNSUPPORTED",
+          "FEED_PEELING", 
+          "FEED_CUTTING",
+          "FEED_CURRENT_TOF",
+          "FEED_NEXT_TOF",
           "FONT_A",
           "FONT_B",
           "FONT_C",
@@ -154,6 +158,10 @@ public abstract class NativeEscPosPrinterSpec extends ReactContextBaseJavaModule
           "LANG_VI",
           "LANG_ZH_CN",
           "LANG_ZH_TW",
+          "LAYOUT_RECEIPT",
+          "LAYOUT_RECEIPT_BM",
+          "LAYOUT_LABEL",
+          "LAYOUT_LABEL_BM",
           "LEVEL_0",
           "LEVEL_1",
           "LEVEL_2",
@@ -304,6 +312,14 @@ public abstract class NativeEscPosPrinterSpec extends ReactContextBaseJavaModule
   @ReactMethod
   @DoNotStrip
   public abstract void addFeedLine(String target, double line, Promise promise);
+
+  @ReactMethod
+  @DoNotStrip
+  public abstract void addLayout(String target, double type, double width, double height, double marginTop, double marginBottom, double offsetCut, double offsetLabel, Promise promise);
+
+  @ReactMethod
+  @DoNotStrip
+  public abstract void addFeedPosition(String target, double position, Promise promise);
 
   @ReactMethod
   @DoNotStrip

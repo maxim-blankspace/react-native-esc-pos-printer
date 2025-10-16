@@ -328,8 +328,20 @@ public static Map<String, Object> getPrinterConstants() {
       constants.put("ALIGN_CENTER", Printer.ALIGN_CENTER);
       constants.put("ALIGN_RIGHT", Printer.ALIGN_RIGHT);
 
-      // lang
+      // feed position
+      constants.put("FEED_PEELING", Printer.FEED_PEELING);
+      constants.put("FEED_CUTTING", Printer.FEED_CUTTING);
+      constants.put("FEED_CURRENT_TOF", Printer.FEED_CURRENT_TOF);
+      constants.put("FEED_NEXT_TOF", Printer.FEED_NEXT_TOF);
 
+      // layout
+      constants.put("LAYOUT_RECEIPT", Printer.LAYOUT_RECEIPT);
+      constants.put("LAYOUT_RECEIPT_BM", Printer.LAYOUT_RECEIPT_BM);
+      constants.put("LAYOUT_LABEL", Printer.LAYOUT_LABEL);
+      constants.put("LAYOUT_LABEL_BM", Printer.LAYOUT_LABEL_BM);
+
+
+      // lang
       constants.put("LANG_EN", Printer.LANG_EN);
       constants.put("LANG_JA", Printer.LANG_JA);
       constants.put("LANG_ZH_CN", Printer.LANG_ZH_CN);

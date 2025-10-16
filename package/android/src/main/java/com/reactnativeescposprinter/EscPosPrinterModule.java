@@ -179,6 +179,54 @@ public class EscPosPrinterModule extends NativeEscPosPrinterSpec {
     }
 
     @ReactMethod
+    synchronized public void addLayout(
+      String target,
+      double type,
+      double width,
+      double height,
+      double marginTop,
+      double marginBottom,
+      double offsetCut,
+      double offsetLabel,
+      Promise promise
+    ) {
+      ThePrinter thePrinter = thePrinterManager_.getObject(target);
+      if (thePrinter == null) {
+        promise.reject(EposStringHelper.getErrorTextData(ERR_INIT, ""));
+      } else {
+        try {
+          thePrinter.addLayout(
+            (int) type,
+            (int) width,
+            (int) height,
+            (int) marginTop,
+            (int) marginBottom,
+            (int) offsetCut,
+            (int) offsetLabel
+          );
+          promise.resolve(null);
+        } catch (Exception e) {
+          processError(promise, e, "");
+        }
+      }
+    }
+
+    @ReactMethod
+    synchronized public void addFeedPosition(String target, double position, Promise promise) {
+      ThePrinter thePrinter = thePrinterManager_.getObject(target);
+      if (thePrinter == null) {
+        promise.reject(EposStringHelper.getErrorTextData(ERR_INIT, ""));
+      } else {
+        try {
+          thePrinter.addFeedPosition((int) position);
+          promise.resolve(null);
+        } catch(Exception e) {
+          processError(promise, e, "");
+        }
+      }
+    }
+
+    @ReactMethod
     synchronized public void addLineSpace(String target, double linespc, Promise promise) {
       ThePrinter thePrinter = thePrinterManager_.getObject(target);
       if (thePrinter == null) {

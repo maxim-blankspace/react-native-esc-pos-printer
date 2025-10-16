@@ -217,6 +217,14 @@ export interface Spec extends TurboModule {
     LANG_TH: number;
     LANG_VI: number;
     LANG_MULTI: number;
+    LAYOUT_RECEIPT: number;
+    LAYOUT_RECEIPT_BM: number;
+    LAYOUT_LABEL: number;
+    LAYOUT_LABEL_BM: number;
+    FEED_PEELING: number;
+    FEED_CUTTING: number;
+    FEED_CURRENT_TOF: number;
+    FEED_NEXT_TOF: number;
   };
 
   initWithPrinterDeviceName(
@@ -230,6 +238,7 @@ export interface Spec extends TurboModule {
   addText(target: string, data: string): Promise<void>;
   addTextLang(target: string, lang: number): Promise<void>;
   addFeedLine(target: string, line: number): Promise<void>;
+  addFeedPosition(target: string, position: number): Promise<void>;
   addLineSpace(target: string, linespc: number): Promise<void>;
   addCut(target: string, type: number): Promise<void>;
   sendData(target: string, timeout: number): Promise<Object>;
@@ -266,6 +275,16 @@ export interface Spec extends TurboModule {
     width: number,
     height: number,
     size: number
+  ): Promise<void>;
+  addLayout(
+    target: string,
+    type: number,
+    width: number,
+    height: number,
+    marginTop: number,
+    marginBottom: number,
+    offsetCut: number,
+    offsetLabel: number
   ): Promise<void>;
   addCommand(target: string, data: string): Promise<void>;
   addPulse(target: string, drawer: number, time: number): Promise<void>;

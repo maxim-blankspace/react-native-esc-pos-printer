@@ -14,7 +14,9 @@ import {
 import type {
   AddBarcodeParams,
   AddCutTypeParam,
+  AddFeedPositionParam,
   AddImageParams,
+  AddLayoutParams,
   AddPulseParams,
   AddSymbolParams,
   AddTextAlignParam,
@@ -134,6 +136,49 @@ export class PrinterWrapper {
     } catch (error) {
       throwProcessedError({
         methodName: 'addFeedLine',
+        errorCode: error.message,
+        messagesMapping: CommonOperationErrorMessageMapping,
+      });
+    }
+  };
+
+  addLayout = async ({
+    type = PrinterConstants.LAYOUT_RECEIPT,
+    width = PrinterConstants.PARAM_DEFAULT,
+    height = PrinterConstants.PARAM_DEFAULT,
+    marginTop = PrinterConstants.PARAM_DEFAULT,
+    marginBottom = PrinterConstants.PARAM_DEFAULT,
+    offsetCut = PrinterConstants.PARAM_DEFAULT,
+    offsetLabel = PrinterConstants.PARAM_DEFAULT,
+  }: AddLayoutParams = {}) => {
+    try {
+      await EscPosPrinter.addLayout(
+        this.target,
+        type,
+        width,
+        height,
+        marginTop,
+        marginBottom,
+        offsetCut,
+        offsetLabel
+      );
+    } catch (error) {
+      throwProcessedError({
+        methodName: 'addLayout',
+        errorCode: error.message,
+        messagesMapping: CommonOperationErrorMessageMapping,
+      });
+    }
+  };
+
+  addFeedPosition = async (
+    position: AddFeedPositionParam = PrinterConstants.PARAM_DEFAULT
+  ) => {
+    try {
+      await EscPosPrinter.addFeedPosition(this.target, position);
+    } catch (error) {
+      throwProcessedError({
+        methodName: 'addFeedPosition',
         errorCode: error.message,
         messagesMapping: CommonOperationErrorMessageMapping,
       });

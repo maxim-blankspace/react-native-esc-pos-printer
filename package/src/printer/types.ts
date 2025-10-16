@@ -14,6 +14,8 @@ import type {
   TextAlignType,
   CommonParams,
   TextLangType,
+  FeedPositionType,
+  LayoutType,
 } from './constants';
 
 import { SymbolLevel, SymbolType } from './constants/enums/symbol';
@@ -113,11 +115,25 @@ export type AddSymbolParams = {
   size: number;
 };
 
+export type AddFeedPositionParam =
+  | FeedPositionType
+  | CommonParams.PARAM_DEFAULT;
+
 export type AddCutTypeParam = PrinterAddCutType | CommonParams.PARAM_DEFAULT;
 
 export interface AddPulseParams {
   drawer?: PrinterAddPulseDrawerType | CommonParams.PARAM_DEFAULT;
   time?: PrinterAddPulseTimeType | CommonParams.PARAM_DEFAULT;
+}
+
+export interface AddLayoutParams {
+  type?: LayoutType | CommonParams.PARAM_DEFAULT;
+  width?: number | CommonParams.PARAM_DEFAULT;
+  height?: number | CommonParams.PARAM_DEFAULT;
+  marginTop?: number | CommonParams.PARAM_DEFAULT;
+  marginBottom?: number | CommonParams.PARAM_DEFAULT;
+  offsetCut?: number | CommonParams.PARAM_DEFAULT;
+  offsetLabel?: number | CommonParams.PARAM_DEFAULT;
 }
 
 export type AddTextAlignParam = TextAlignType | CommonParams.PARAM_DEFAULT;

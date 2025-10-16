@@ -101,7 +101,7 @@ dependencies {
   //noinspection GradleDynamicVersion
 implementation fileTree(dir: "libs", include: ["*.jar"])
 implementation 'com.google.android.gms:play-services-location:21.0.1'
-implementation "com.facebook.react:react-native:+"
+  implementation("com.facebook.react:react-android:0.76.5")
 }
 
 if (isNewArchitectureEnabled()) {

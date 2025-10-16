@@ -6,6 +6,7 @@ import {
   CommonParams,
   ColorType,
   TextLangType,
+  FeedPositionType,
 } from './common';
 
 import {
@@ -36,6 +37,7 @@ import { BarcodeType, BarcodeHRI } from './barcode';
 import { SymbolType, SymbolLevel } from './symbol';
 import { FontType, TextAlignType } from './textStyle';
 import { PrinterAddPulseDrawerType, PrinterAddPulseTimeType } from './pulse';
+import { LayoutType } from './layout';
 
 export const PrinterConstants = {
   ...PrinterModelLang,
@@ -53,6 +55,8 @@ export const PrinterConstants = {
   ...FontType,
   ...SymbolType,
   ...SymbolLevel,
+  ...LayoutType,
+  ...FeedPositionType,
   ...PrinterAddPulseDrawerType,
   ...PrinterAddPulseTimeType,
   ...TextAlignType,
@@ -83,11 +87,13 @@ export {
   ImageHalftoneType,
   ImageColorModeType,
   CommonParams,
+  FeedPositionType,
   BarcodeType,
   BarcodeHRI,
   FontType,
   SymbolType,
   SymbolLevel,
+  LayoutType,
   PrinterAddPulseDrawerType,
   PrinterAddPulseTimeType,
   TextAlignType,

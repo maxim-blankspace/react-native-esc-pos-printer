@@ -47,6 +47,13 @@ export enum PrinterAddCutType {
   FULL_CUT_RESERVE = EscPosPrinterConstants.FULL_CUT_RESERVE,
 }
 
+export enum FeedPositionType {
+  FEED_PEELING = EscPosPrinterConstants.FEED_PEELING,
+  FEED_CUTTING = EscPosPrinterConstants.FEED_CUTTING,
+  FEED_CURRENT_TOF = EscPosPrinterConstants.FEED_CURRENT_TOF,
+  FEED_NEXT_TOF = EscPosPrinterConstants.FEED_NEXT_TOF,
+}
+
 export enum PrinterErrorResult {
   ERR_PARAM = EscPosPrinterConstants.ERR_PARAM,
   ERR_MEMORY = EscPosPrinterConstants.ERR_MEMORY,

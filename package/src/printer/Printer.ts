@@ -1,6 +1,10 @@
 import type PQueueType from 'p-queue';
 import { PrinterWrapper } from './PrinterWrapper';
-import { PrinterGetSettingsType, PrinterModelLang } from './constants';
+import {
+  PrinterConstants,
+  PrinterGetSettingsType,
+  PrinterModelLang,
+} from './constants';
 import {
   addTextLine,
   addViewShot,
@@ -10,7 +14,9 @@ import {
 import type {
   AddBarcodeParams,
   AddCutTypeParam,
+  AddFeedPositionParam,
   AddImageParams,
+  AddLayoutParams,
   AddPulseParams,
   AddSymbolParams,
   AddTextAlignParam,
@@ -88,6 +94,10 @@ export class Printer {
     return this.printerWrapper.addText(data);
   };
 
+  addFeedPosition = (position: AddFeedPositionParam) => {
+    return this.printerWrapper.addFeedPosition(position);
+  };
+
   addFeedLine = (line?: number) => {
     return this.printerWrapper.addFeedLine(line);
   };
@@ -110,6 +120,10 @@ export class Printer {
 
   getStatus = () => {
     return this.printerWrapper.getStatus();
+  };
+
+  addLayout = (params?: AddLayoutParams) => {
+    return this.printerWrapper.addLayout(params);
   };
 
   addImage = (params: AddImageParams) => {

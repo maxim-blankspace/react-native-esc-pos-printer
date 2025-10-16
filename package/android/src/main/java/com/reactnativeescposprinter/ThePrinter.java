@@ -244,6 +244,17 @@ public class ThePrinter implements PrinterSettingListener, ReceiveListener {
         epos2Printer_.addTextLang(lang);
     }
 
+    synchronized public void addFeedPosition(int position) throws Epos2Exception {
+      if (epos2Printer_ == null) throw new Epos2Exception(Epos2Exception.ERR_MEMORY);
+      epos2Printer_.addFeedPosition(position);
+    }
+
+    synchronized public void addLayout(int type, int width, int height, int marginTop, int marginBottom,
+                                       int offsetCut, int offsetLabel) throws Epos2Exception {
+      if (epos2Printer_ == null) throw new Epos2Exception(Epos2Exception.ERR_MEMORY);
+      epos2Printer_.addLayout(type, width, height, marginTop, marginBottom, offsetCut, offsetLabel);
+    }
+
     synchronized public void addFeedLine(int line) throws Epos2Exception {
       if (epos2Printer_ == null) throw new Epos2Exception(Epos2Exception.ERR_MEMORY);
 
