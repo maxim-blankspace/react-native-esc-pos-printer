@@ -1,10 +1,6 @@
 import type PQueueType from 'p-queue';
 import { PrinterWrapper } from './PrinterWrapper';
-import {
-  PrinterConstants,
-  PrinterGetSettingsType,
-  PrinterModelLang,
-} from './constants';
+import { PrinterGetSettingsType, PrinterModelLang } from './constants';
 import {
   addTextLine,
   addViewShot,

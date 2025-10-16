@@ -1,5 +1,5 @@
 {
-  "name": "react-native-esc-pos-printer",
+  "name": "@maxim-blankspace/react-native-esc-pos-printer",
   "version": "4.4.5",
   "description": "s",
   "source": "./src/index.tsx",
@@ -61,7 +61,7 @@
   },
   "homepage": "https://github.com/tr3v3r/react-native-esc-pos-printer#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
     "buffer": "6.0.3",
